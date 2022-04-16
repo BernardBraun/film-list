@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
+
 export default function Home() {
 
     const api = axios.create ({
@@ -33,7 +34,7 @@ export default function Home() {
                         <article key={filme.id}>
                             <strong>{filme.nome}</strong>
                             <img src={filme.foto} alt={filme.nome} />
-                            <Link to='/' className=''>Acessar</Link>
+                            <Link to={`/filme/${filme.id}`}>Acessar</Link>
                         </article>
                      )
                  })}
@@ -42,14 +43,3 @@ export default function Home() {
   ); 
 }
 
-
-/*
-{filmes.map((filme) =>{
-                     return(
-                         <article key={filme.id}>
-                             <strong>{filme.nome}</strong>
-                             <img src={filme.foto} alt={filme.nome} />
-                         </article>
-                     )
-                 })}
-*/
